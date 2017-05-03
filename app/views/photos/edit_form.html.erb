@@ -1,12 +1,12 @@
-<h1>Add a new Photo</h1>
+<h1>Edit Photo</h1>
 
-<form action="/create_photo">
+<form action="/update_photo">
   <div>
     <label for="url">
       Image URL
     </label>
 
-    <input id="url" type="text" name="da_source">
+    <input id="url" type="text" name="da_source" value="url">
   </div>
 
   <div>
@@ -14,10 +14,10 @@
       Caption
     </label>
 
-    <input id="cap" type="text" name="da_caption">
+    <input id="cap" type="text" name="da_caption" value="cap">
   </div>
 
   <button>
-    Create Photo
+    Update Photo
   </button>
 </form>
