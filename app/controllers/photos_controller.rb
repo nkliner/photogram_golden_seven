@@ -31,7 +31,14 @@ class PhotosController < ApplicationController
   end
 
   def update_row
-    render("photos/update_row.html.erb")
+    url = params[:da_source]
+    cap = params[:da_caption]
+    new_photo = Photo.new
+    new_photo.source = url
+    new_photo.caption = cap
+    new_photo.save
+    # render("photos/create_row.html.erb")
+    redirect_to("/photos")
   end
 
   def destroy_row
