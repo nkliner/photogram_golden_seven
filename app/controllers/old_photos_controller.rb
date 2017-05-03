@@ -27,17 +27,17 @@ class PhotosController < ApplicationController
   end
 
   def edit_form
-    @photo = Photo.find(params[:id])
+    render("photos/edit_form.html.erb")
   end
 
   def update_row
-    @photo = Photo.find(params[:id])
-
-    @photo.source = params[:source]
-    @photo.caption = params[:caption]
-
-    @photo.save
-
+    url = params[:da_source]
+    cap = params[:da_caption]
+    new_photo = Photo.new
+    new_photo.source = url
+    new_photo.caption = cap
+    new_photo.save
+    # render("photos/create_row.html.erb")
     redirect_to("/photos")
   end
 
